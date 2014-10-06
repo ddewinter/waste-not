@@ -5,4 +5,8 @@
   "description": "Helps you be more productive by limiting how much time you spend on Facebook.",
   "version": "1.0",
 
+  "background": {
+    "persistent": false,
+	"page": "background.html"
+  }
 }
