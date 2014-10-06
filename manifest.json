@@ -8,5 +8,9 @@
   "background": {
     "persistent": false,
 	"page": "background.html"
-  }
+  },
+  
+  "permissions": [
+    "webNavigation"
+  ]
 }
