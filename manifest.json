@@ -11,6 +11,8 @@
   },
   
   "permissions": [
-    "webNavigation"
+    "tabs",
+    "webNavigation",
+    "*://*.facebook.com/"
   ]
 }
