@@ -4,7 +4,8 @@ function onNavigatingToFacebook(details) {
     function (tab) {
       console.log("onBeforeNavigate: %s. Tab URL: %s", details.url, tab.url);
       
-      if (details.url !== tab.url) {
+      // http://facebook.com is normalized to http://www.facebook.com by the tab's URL property.
+      if (details.url !== tab.url && details.url !== "http://facebook.com") {
         // If this is a Connect request or other background FB request, don't take any action.
         return;
       }
