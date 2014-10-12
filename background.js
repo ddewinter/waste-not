@@ -1,13 +1,9 @@
 function onNavigatingToFacebook(details) {
   console.log("onBeforeNavigate: " + details.url);
   
-  chrome.tabs.get(
-    details.tabId, 
-    function (tab) {
-      // Not quite fast enough...leaves the page half-loaded
-      var jsRunner = { 'code': 'window.stop();' };
-      chrome.tabs.executeScript(tab.id, jsRunner);
-    });
+  var tabUpdate = { url: chrome.extension.getURL("replacement.html") };
+  console.log("jsRunner: " + tabUpdate.url);
+  chrome.tabs.update(details.tabId, tabUpdate);
 }
 
 if (chrome.webNavigation && chrome.webNavigation.onBeforeNavigate) {
